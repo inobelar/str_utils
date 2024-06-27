@@ -107,7 +107,7 @@ int main(void)
     /* Test chunks count */
     {
         const test_case_t* test = &(TEST_CASES[0]);
-        while(test->str != NULL)
+        while(test->str != NULL) /* Iterate until 'Sentinel' */
         {
             const size_t chunks_count = str_split_count_chunks(test->str, strlen(test->str), test->sep, test->keep_empty, test->skip_escaped);
 
@@ -130,7 +130,7 @@ int main(void)
     /* Test chunks count & content */
     {
         const test_case_t* test = &(TEST_CASES[0]);
-        while(test->str != NULL) /* Traverse until 'Sentinel' */
+        while(test->str != NULL) /* Iterate until 'Sentinel' */
         {
             str_chunk_t* chunks;
             const size_t chunks_count = str_split(test->str, strlen(test->str), test->sep, test->keep_empty, test->skip_escaped, &chunks);
